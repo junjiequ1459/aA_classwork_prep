@@ -52,8 +52,8 @@ console.log(arr2);
 let fruit = 'apple';
 fruit = 'pear';
 console.log(fruit);
-let firstName = 'Timothy';
-let lastName = 'Dong';
+let firstName = 'Rex';
+let lastName = 'Qu';
 function Num(number) {
     if (20 === number) {
         console.log('they equal');
