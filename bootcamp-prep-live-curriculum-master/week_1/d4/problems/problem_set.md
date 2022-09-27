@@ -47,7 +47,7 @@
 //
 // Example:
 //
-// capWords(['hello', 'boOtCaMp', 'PREP!']); // => ['HELLO', 'BOOTCAMP', 'PREP!']
+//
 ```
 
 ### wordPeriods
@@ -118,7 +118,7 @@ function printForwards(arr) {
   }
 }
 
-var alphabet = ['a', 'b', 'c', 'd', 'e'];
+var alphabet = ["a", "b", "c", "d", "e"];
 printForwards(alphabet);
 ```
 
@@ -130,6 +130,6 @@ function printBackwards(array) {
   }
 }
 
-var names = ['kurstie', 'mike', 'alex', 'meagan'];
+var names = ["kurstie", "mike", "alex", "meagan"];
 printBackwards(names);
 ```
