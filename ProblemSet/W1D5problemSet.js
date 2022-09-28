@@ -71,3 +71,6 @@ const wordYeller = (sentence) => {
 var sent = "Stop it now! Please, wont you stop?";
 var yelledWords = wordYeller(sent);
 yelledWords === "Stop! it! now! Please, wont! you! stop?"; // => true
+
+
+const arraySubstring
