@@ -59,7 +59,7 @@ const wordYeller = (sentence) => {
   let punct = [".", ",", "!", "?", ";", ":"];
   let splitStr = sentence.split(" ");
   for (let i = 0; i < splitStr.length; i++) {
-    if (/[^A-Za-z0-9]/.test(splitStr[i])) {
+    if (/[^A-Za-z]/.test(splitStr[i])) {
       returnStr += `${splitStr[i]} `;
     } else {
       returnStr += `${splitStr[i]}! `;
