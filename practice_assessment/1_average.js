@@ -9,11 +9,7 @@
  */
 
 function average(num1, num2) {
-  console.log((num1 + num2) / 2);
+  return (num1 + num2) / 2;
 }
-average(10, 20); // => 15
-average(5, 7); // => 6
-average(24, 32); // => 28
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
 module.exports = average;

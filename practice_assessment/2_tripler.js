@@ -13,10 +13,8 @@ function tripler(array) {
   for (let i = 0; i < array.length; i++) {
     returnArr.push(array[i] * 3);
   }
-  console.log(returnArr);
+  return returnArr;
 }
-tripler([1, 2, 3]); // => [ 3, 6, 9 ]
-tripler([4, 1, 7]); // => [ 12, 3, 21 ]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
 module.exports = tripler;

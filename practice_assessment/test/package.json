@@ -4,9 +4,12 @@
   "description": "",
   "main": "test.js",
   "scripts": {
-    "test": "mocha"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.1.1"
+  }
 }

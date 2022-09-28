@@ -15,11 +15,8 @@ function oddRange(end) {
       returnArr.push(i);
     }
   }
-  console.log(returnArr);
+  return returnArr;
 }
-
-oddRange(13); // => [ 1, 3, 5, 7, 9, 11, 13 ]
-oddRange(6); // => [ 1, 3, 5 ]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
 module.exports = oddRange;
