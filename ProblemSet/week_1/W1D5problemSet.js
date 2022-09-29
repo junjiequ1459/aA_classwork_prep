@@ -56,7 +56,6 @@ everyOtherWord("the weather is wonderful"); // => [ 'the', 'is' ]
 
 const wordYeller = (sentence) => {
   let returnStr = "";
-  let punct = [".", ",", "!", "?", ";", ":"];
   let splitStr = sentence.split(" ");
   for (let i = 0; i < splitStr.length; i++) {
     if (/[^A-Za-z]/.test(splitStr[i])) {
@@ -68,9 +67,38 @@ const wordYeller = (sentence) => {
   console.log(returnStr);
 };
 
-var sent = "Stop it now! Please, wont you stop?";
+var sent = "Stop it now! Please,"; // ['Stop','it','now','please,']
 var yelledWords = wordYeller(sent);
 yelledWords === "Stop! it! now! Please, wont! you! stop?"; // => true
 
+const arraySubstring = (word, str) => {
+  let returnArr = [];
+  for (let i = 0; i < word.length; i++)
+    if (word[i].indexOf(str) === -1) {
+      returnArr.push(false);
+    } else {
+      returnArr.push(true);
+    }
+  console.log(returnArr);
+};
 
-const arraySubstring
+arraySubstring(["hello", "history", "helix", "hellos"], "hel");
+// => [true, false, true, true]
+arraySubstring(["prefix", "problems", "pragmatic", "prefer"], "pre");
+// => [true, false, false, true]
+
+const evenCaps = (sentence) => {
+  let returnSentence = "";
+  for (let i = 0; i < sentence.length; i++) {
+    if (i % 2 === 0) {
+      returnSentence += sentence[i].toUpperCase();
+    } else {
+      returnSentence += sentence[i];
+    }
+  }
+  console.log(returnSentence);
+};
+evenCaps("Tom got a small piece of pie");
+// => "ToM GoT A SmAlL PiEcE Of pIe"
+evenCaps("the book is in front of the table");
+// => "ThE BoOk iS In fRoNt oF ThE TaBlE"
