@@ -23,9 +23,27 @@ hasFavoriteFood(person, 'fish'); // => false
 ***********************************************************************/
 
 function hasFavoriteFood(obj, food) {
-  for (let key in obj) {
+  if (obj.favoriteFoods.includes(food)) {
+    return true;
   }
+  return false;
 }
+
+var dog = {
+  name: "Fido",
+  favoriteFoods: ["chicken", "sausage", "scooby snacks"],
+};
+
+hasFavoriteFood(dog, "sausage"); // => true
+hasFavoriteFood(dog, "cat food"); // => false
+
+var person = {
+  name: "Al",
+  favoriteFoods: ["pizza", "burgers", "ramen"],
+};
+
+console.log(hasFavoriteFood(person, "burgers")); // => true
+console.log(hasFavoriteFood(person, "fish")); // => false
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = hasFavoriteFood;
