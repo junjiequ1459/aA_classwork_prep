@@ -23,7 +23,8 @@ hasFavoriteFood(person, 'fish'); // => false
 ***********************************************************************/
 
 function hasFavoriteFood(obj, food) {
-
+  for (let key in obj) {
+  }
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
