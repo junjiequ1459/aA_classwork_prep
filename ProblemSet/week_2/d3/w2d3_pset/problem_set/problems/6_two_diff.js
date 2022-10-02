@@ -13,10 +13,19 @@ HINT: Account for negative difference too!
 // twoDiff([]) // => []
 ***********************************************************************/
 
-
-function twoDiff(array){
-
+function twoDiff(array) {
+  let returnList = [];
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i; j < array.length; j++) {
+      if (array[i] - array[j] === 2 || array[i] - array[j] === -2) {
+        returnList.push([i, j]);
+      }
+    }
+  }
+  return returnList;
 }
-
+console.log(twoDiff([2, 3, 4, 6, 1, 7])); // => [[0, 2], [1, 4], [2, 3]]
+console.log(twoDiff([0, 2, 4, 3, 5])); // => [[0, 1], [1, 2], [3,4]]
+console.log(twoDiff([])); // => []
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = twoDiff;
