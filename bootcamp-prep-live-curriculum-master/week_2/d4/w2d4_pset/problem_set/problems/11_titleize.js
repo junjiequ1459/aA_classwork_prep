@@ -35,10 +35,49 @@ titleize("i LOVE; lover of mine", ["love", "of"])
 titleize("shall we dance?", ["dance"])
 => "Shall We dance?"
 ***********************************************************************/
+const removePunctuation = (word) => {
+  let punctuation = [";", "!", ".", "?", ",", "-"];
+  let splitWord = word.split("");
+  for (let i = 0; i < splitWord.length; i++) {
+    if (punctuation.includes(splitWord[i])) {
+      splitWord = splitWord.slice(0, -1);
+    }
+  }
+  return splitWord.join("").toLowerCase();
+};
+
+const formatStr = (str) => {
+  let returnStr = "";
+  let lowerStr = str.toLowerCase();
+  let capitalized = lowerStr.charAt(0).toUpperCase() + lowerStr.slice(1);
+
+  return capitalized;
+};
 
 function titleize(title, stopWords) {
-
+  let returnTitle = "";
+  let splitWord = title.split(" ");
+  for (let i = 0; i < splitWord.length; i++) {
+    if (stopWords.includes(removePunctuation(splitWord[i]))) {
+      returnTitle += splitWord[i].toLowerCase() + " ";
+    } else {
+      returnTitle += formatStr(splitWord[i]) + " ";
+    }
+  }
+  return returnTitle.trim();
 }
+
+console.log(titleize("forest gump, the runner", ["the"]));
+//=> "Forest Gump, the Runner"
+
+console.log(titleize("MASTER AND COMMANDER", ["and"]));
+//=> "Master and Commander"
+
+console.log(titleize("i LOVE; lover of mine", ["love", "of"]));
+//=> "I love; Lover of Mine"
+
+console.log(titleize("shall we dance?", ["dance"]));
+//=> "Shall We dance?"
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = titleize;

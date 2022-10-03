@@ -22,8 +22,23 @@ twoDimensionalSize(arr2); // => 5
 ***********************************************************************/
 
 function twoDimensionalSize(array) {
-
+  let returnNum = 0;
+  for (let i = 0; i < array.length; i++) {
+    returnNum += array[i].length;
+  }
+  return returnNum;
 }
 
+var arr1 = [
+  [1, 2, 3],
+  [4, 5],
+  [6, 7, 8, 9],
+];
+
+console.log(twoDimensionalSize(arr1)); // => 9
+
+var arr2 = [["a"], ["b", "c", "d", "e"]];
+
+console.log(twoDimensionalSize(arr2)); // => 5
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = twoDimensionalSize;
