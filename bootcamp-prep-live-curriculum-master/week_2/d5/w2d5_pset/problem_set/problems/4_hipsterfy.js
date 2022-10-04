@@ -12,9 +12,17 @@ hipsterfy("runner anaconda"); // => "runnr anacond"
 hipsterfy("turtle cheeseburger fries"); // => "turtl cheeseburgr fris"
 ***********************************************************************/
 
-function hipsterfy(sentence) {
+const capVowels = require("../../../../d4/w2d4_pset/problem_set/problems/6_cap_vowels");
 
+function hipsterfy(sentence) {}
+
+function removeLastVowel(word) {
+  let returnStr = "";
+  let vowel = ["a", "e", "i", "o", "u"];
+  for (let i = 0; i < word.length; i++) {}
 }
+
+console.log(hipsterfy("proper tonic panther")); // => "propr tonc panthr"
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = hipsterfy;
