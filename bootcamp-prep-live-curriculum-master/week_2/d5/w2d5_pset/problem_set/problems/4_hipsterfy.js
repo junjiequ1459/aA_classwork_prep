@@ -14,15 +14,31 @@ hipsterfy("turtle cheeseburger fries"); // => "turtl cheeseburgr fris"
 
 const capVowels = require("../../../../d4/w2d4_pset/problem_set/problems/6_cap_vowels");
 
-function hipsterfy(sentence) {}
+function hipsterfyWord(word) {
+  var vowels = ["a", "e", "i", "o", "u"];
 
-function removeLastVowel(word) {
-  let returnStr = "";
-  let vowel = ["a", "e", "i", "o", "u"];
-  for (let i = 0; i < word.length; i++) {}
+  for (var i = word.length - 1; i >= 0; i -= 1) {
+    if (vowels.indexOf(word[i]) !== -1) {
+      var hipsterWord = word.slice(0, i) + word.slice(i + 1);
+      return hipsterWord;
+    }
+  }
+
+  return word;
 }
 
-console.log(hipsterfy("proper tonic panther")); // => "propr tonc panthr"
+function hipsterfy(sentence) {
+  var hipsterfiedWords = [];
+  var words = sentence.split(" ");
+
+  for (var i = 0; i < words.length; i += 1) {
+    var word = words[i];
+    hipsterfiedWords.push(hipsterfyWord(word));
+  }
+
+  var hipsterfiedSentence = hipsterfiedWords.join(" ");
+  return hipsterfiedSentence;
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = hipsterfy;
