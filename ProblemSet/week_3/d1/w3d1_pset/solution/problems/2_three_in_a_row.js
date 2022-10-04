@@ -10,24 +10,14 @@ threeInARow([10, 9, 20, 33, 3, 3]); // => false;
 ***********************************************************************/
 
 function threeInARow(arr) {
-  let counter = 0;
-  let lastNum;
-  for (let i = 0; i < arr.length; i++) {
-    if (counter === 2) {
+  for (var i = 0; i < arr.length - 2; i++) {
+    if (arr[i] === arr[i + 1] && arr[i] === arr[i + 2]) {
       return true;
-    }
-    if (arr[i] === lastNum) {
-      counter += 1;
-      lastNum = arr[i];
-    } else {
-      lastNum = arr[i];
     }
   }
 
   return false;
 }
-console.log(threeInARow([4, 3, 7, 7, 7, 13, 8])); // => true;
-console.log(threeInARow([10, 9, 20, 33, 3, 3])); // => false;
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = threeInARow;

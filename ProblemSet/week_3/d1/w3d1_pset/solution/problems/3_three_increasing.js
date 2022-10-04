@@ -14,23 +14,17 @@ threeIncreasing([7, 2, 4, 5, 2, 1, 6]); // => false
 ***********************************************************************/
 
 function threeIncreasing(arr) {
-  let counter = 0;
-  let lastNum;
-  for (let i = 0; i < arr.length; i++) {
-    if (counter === 2) {
+  for (var i = 0; i < arr.length - 2; i++) {
+    var num1 = arr[i];
+    var num2 = arr[i + 1];
+    var num3 = arr[i + 2];
+    if ((num1 + 1 === num2) && (num2 + 1 === num3)) {
       return true;
     }
-    if (arr[i] === lastNum + 1) {
-      counter++;
-      lastNum = arr[i];
-    } else {
-      lastNum = arr[i];
-    }
   }
+
   return false;
 }
-console.log(threeIncreasing([3, 2, 11, 12, 13, 2, 4])); // => true
-console.log(threeIncreasing([7, 2, 4, 5, 2, 1, 6])); // => false
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = threeIncreasing;
