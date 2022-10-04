@@ -11,8 +11,15 @@ factorial(10); // => 3628800
 ***********************************************************************/
 
 function factorial(n) {
-
+  if (n === 0) {
+    return 1;
+  }
+  return n * factorial(n - 1);
 }
 
-/**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
+console.log(factorial(1)); // => 1
+console.log(factorial(4)); // => 24
+console.log(factorial(5)); // => 12
+console.log(factorial(10)); // => 3628800
+/**************DO NOT MOIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = factorial;

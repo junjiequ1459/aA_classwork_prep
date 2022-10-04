@@ -1,19 +1,15 @@
-const isStopWord = (word, stopWords) => {
-  if (word === stopWords) {
-    return true;
-  }
-  return false;
+const person = {
+  firstName: "Rex",
+  lastName: "Qu",
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+  set fullName(value) {
+    const parts = value.split(" ");
+    this.firstName = parts[0];
+    this.lastName = parts[1];
+  },
 };
 
-const removePunctuation = (word) => {
-  let punctuation = [";", "!", ".", "?", ",", "-"];
-  let splitWord = word.split("");
-  for (let i = 0; i < splitWord.length; i++) {
-    if (punctuation.includes(splitWord[i])) {
-      splitWord = splitWord.slice(0, -1);
-    }
-  }
-  return splitWord.join("").toLowerCase();
-};
-
-console.log(isStopWord(removePunctuation("WOrD;"), "word"));
+person.fullName = "Ana Wall";
+console.log(person);

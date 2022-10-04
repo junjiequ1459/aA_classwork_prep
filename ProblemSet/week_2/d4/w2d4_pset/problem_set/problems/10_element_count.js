@@ -9,7 +9,17 @@ elementCount(['c', 'a', 'c', 'a', 'b']); // => { "c": 2, "a": 2, "b": 1 }
 ***********************************************************************/
 
 function elementCount(array) {
-
+  let returnObj = {};
+  for (let i = 0; i < array.length; i++) {
+    if (returnObj[array[i]]) {
+      returnObj[array[i]]++;
+    } else {
+      returnObj[array[i]] = 1;
+    }
+  }
+  return returnObj;
 }
+console.log(elementCount(["a", "a", "b", "b"])); //=> { "a" : 2, "b" : 2 }
+console.log(elementCount(["c", "a", "c", "a", "b"])); // => { "c": 2, "a": 2, "b": 1 }
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = elementCount;
