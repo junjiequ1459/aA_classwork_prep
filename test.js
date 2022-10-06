@@ -1,9 +1,10 @@
-function catBuilder(name, color, toys) {
-  return {
-    name,
-    color,
-    toys,
-  };
-}
+let list = ["rex", "ana", "tim", "tae", "snow"];
 
-console.log(catBuilder("whiskers", "black", "yarn"));
+function hasE(name) {
+  if (name.includes("e")) {
+    return true;
+  }
+}
+n;
+
+console.log(list.some(hasE));

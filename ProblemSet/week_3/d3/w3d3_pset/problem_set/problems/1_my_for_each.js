@@ -33,8 +33,26 @@ will print 5.
 ***********************************************************************/
 
 function myForEach(array, cb) {
-
+  for (let i = 0; i < array.length; i++) {
+    cb(array[i], i, array);
+  }
 }
 
+function printInfo(ele, i, arr) {
+  console.log(ele, "is at position", i, "in array", arr);
+}
+function printHalf(num) {
+  console.log(num / 2);
+}
+
+myForEach(["a", "b", "c"], printInfo); // prints
+// a is at position 0 in array [ 'a', 'b', 'c' ]
+// b is at position 1 in array [ 'a', 'b', 'c' ]
+// c is at position 2 in array [ 'a', 'b', 'c' ]
+
+myForEach([10, 50, 120], printHalf); // prints
+// 5
+// 25
+// 60
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = myForEach;

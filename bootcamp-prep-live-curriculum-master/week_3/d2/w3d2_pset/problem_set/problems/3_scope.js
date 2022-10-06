@@ -5,7 +5,7 @@
 var foo = "Happy";
 
 for (var foo = 0; foo <= 5; foo += 1) {
-  console.log(foo); //What will foo be on each iteration?
+  console.log(foo); //What will foo be on each iteration? 0-5
 }
 
-console.log(foo); //What will foo be on this line?
+console.log(foo); //What will foo be on this line? 6

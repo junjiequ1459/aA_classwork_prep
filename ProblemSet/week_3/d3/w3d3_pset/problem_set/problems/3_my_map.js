@@ -18,8 +18,18 @@ myMap([9, 25, 100, 36, 81], Math.sqrt); // => [ 3, 5, 10, 6, 9 ]
 ***********************************************************************/
 
 function myMap(arr, cb) {
-
+  let returnList = [];
+  for (let i = 0; i < arr.length; i++) {
+    returnList.push(cb(arr[i]));
+  }
+  return returnList;
 }
+
+function doubler(num) {
+  return num * 2;
+}
+
+console.log(myMap([2, 4, 6, 1], doubler)); // => [ 4, 8, 12, 2 ]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = myMap;

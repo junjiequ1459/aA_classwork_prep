@@ -26,8 +26,26 @@ parameters to the callback. This allows us to create a versatile
 ***********************************************************************/
 
 function mySelect(arr, cb) {
-
+  let returnList = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (cb(arr[i])) {
+      returnList.push(arr[i]);
+    }
+  }
+  return returnList;
 }
+
+function isEven(num) {
+  return num % 2 === 0;
+}
+
+console.log(mySelect([1, 2, 3, 4, 5, 6], isEven)); // => [ 2, 4, 6 ]
+
+function isNegative(num) {
+  return num < 0;
+}
+
+console.log(mySelect([12, -14, 4, -10.2, 0], isNegative)); // => [ -14, -10.2 ]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = mySelect;
