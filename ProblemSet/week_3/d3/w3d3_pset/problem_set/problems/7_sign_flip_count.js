@@ -14,8 +14,32 @@ signFlipCount([-1, 11.3, -3, 100]); //=> 3
 ***********************************************************************/
 
 function signFlipCount(numbers) {
+  let counter = 0;
+  for (let i = 0; i < numbers.length - 1; i++) {
+    if (numbers[i] === 0) {
+      continue;
+    }
 
+    if (isPositive(numbers[i]) && isNegative(numbers[i + 1])) {
+      counter++;
+    } else if (isNegative(numbers[i]) && isPositive(numbers[i + 1])) {
+      counter++;
+    }
+    //console.log(`current counter : ${counter}`);
+  }
+  return counter;
 }
 
+function isPositive(num) {
+  return num > 0;
+}
+function isNegative(num) {
+  return num < 0;
+}
+console.log(signFlipCount([5, 6, 10, 3])); //=> 0
+console.log(signFlipCount([-12, 0, -3, -5])); //=> 0
+console.log(signFlipCount([-12, 10, -3, -5])); //=> 2
+console.log(signFlipCount([1, -2, -3, -4])); //=> 1
+console.log(signFlipCount([-1, 11.3, -3, 100])); //=> 3
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = signFlipCount;

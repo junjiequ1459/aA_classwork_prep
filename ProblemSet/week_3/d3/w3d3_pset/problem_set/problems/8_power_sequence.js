@@ -17,8 +17,19 @@ powerSequence(8, 3); // => [ 8, 64, 512 ]
 ***********************************************************************/
 
 function powerSequence(base, length) {
-
+  let returnList = [base];
+  let counter = length;
+  let increment = 0;
+  while (counter > 1) {
+    returnList.push(returnList[increment] * base);
+    counter--;
+    increment++;
+  }
+  return returnList;
 }
+console.log(powerSequence(3, 4)); // => [ 3, 9, 27, 81 ]
+console.log(powerSequence(2, 6)); // => [ 2, 4, 8, 16, 32, 64 ]
+console.log(powerSequence(8, 3)); // => [ 8, 64, 512 ]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = powerSequence;

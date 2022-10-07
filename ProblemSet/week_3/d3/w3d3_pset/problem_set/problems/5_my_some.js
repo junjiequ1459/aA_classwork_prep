@@ -16,8 +16,21 @@ mySome([2, 4, 6, 8], isNegative); // => false
 ***********************************************************************/
 
 function mySome(arr, cb) {
-
+  for (let i = 0; i < arr.length; i++) {
+    if (cb(arr[i])) {
+      return true;
+    }
+  }
+  return false;
 }
+
+function isNegative(num) {
+  return num < 0;
+}
+
+console.log(mySome([10, -10, 11, 4], isNegative)); // => true
+console.log(mySome([-10, -10, -11, -4], isNegative)); // => true
+console.log(mySome([2, 4, 6, 8], isNegative)); // => false
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = mySome;

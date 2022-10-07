@@ -1,10 +1,4 @@
-let list = ["rex", "ana", "tim", "tae", "snow"];
-
-function hasE(name) {
-  if (name.includes("e")) {
-    return true;
-  }
+function isNegative(num) {
+  return num < 0;
 }
-n;
-
-console.log(list.some(hasE));
+console.log(isNegative(-12));
