@@ -52,5 +52,3 @@ console.log(count);
 // mid === target
 
 // return mid
-
-//

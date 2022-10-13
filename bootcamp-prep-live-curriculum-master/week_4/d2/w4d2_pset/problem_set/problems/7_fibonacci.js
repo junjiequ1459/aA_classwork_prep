@@ -21,8 +21,27 @@ fibonacci(10); // => [ 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 ]
 ***********************************************************************/
 
 function fibonacci(n) {
+  let returnList = [];
 
+  counter = 0;
+
+  while (n > counter) {
+    if (counter < 2) {
+      returnList.push(1);
+    } else {
+      returnList.push(returnList[counter - 1] + returnList[counter - 2]);
+    }
+    counter++;
+  }
+  return returnList;
 }
+
+console.log(fibonacci(0)); // => []
+console.log(fibonacci(1)); // => [ 1 ]
+console.log(fibonacci(2)); // => [ 1, 1 ]
+console.log(fibonacci(3)); // => [ 1, 1, 2 ]
+console.log(fibonacci(5)); // => [ 1, 1, 2, 3, 5 ]
+console.log(fibonacci(10)); // => [ 1, 1, 2, 3, 5, 8, 13, 21, 34, 55 ]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = fibonacci;

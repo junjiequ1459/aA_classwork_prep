@@ -12,8 +12,24 @@ nickname('bob'); // => 'BOB-BOB'
 ***********************************************************************/
 
 function nickname(name) {
+  let counter = 0;
+  let vowel = "aeiou";
+  let returnStr = "";
 
+  for (let i = 0; i < name.length; i++) {
+    if (vowel.includes(name[i]) && counter > 1) {
+      return `${name.slice(0, i + 1).toUpperCase()}-${name
+        .slice(0, i + 1)
+        .toUpperCase()}`;
+    }
+    counter++;
+  }
+  return `${name.toUpperCase()}-${name.toUpperCase()}`;
 }
+console.log(nickname("manuel")); // => 'MANU-MANU'
+console.log(nickname("pikachu")); // => 'PIKA-PIKA'
+console.log(nickname("bootcamp")); // => 'BOO-BOO'
+console.log(nickname("bob")); // => 'BOB-BOB'
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = nickname;

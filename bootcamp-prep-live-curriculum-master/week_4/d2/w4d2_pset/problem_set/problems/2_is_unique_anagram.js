@@ -14,8 +14,23 @@ isUniqueAnagram('abcd', 'abcdx'); // => false
 ***********************************************************************/
 
 function isUniqueAnagram(word1, word2) {
-
+  for (let i = 0; i < word1.length; i++) {
+    if (!word2.includes(word1[i])) {
+      return false;
+    }
+  }
+  for (let i = 0; i < word2.length; i++) {
+    if (!word1.includes(word2[i])) {
+      return false;
+    }
+  }
+  return true;
 }
+
+console.log(isUniqueAnagram("iceman", "cinema")); // => true
+console.log(isUniqueAnagram("abcd", "adcb")); // => true
+console.log(isUniqueAnagram("abcd", "adxb")); // => false
+console.log(isUniqueAnagram("abcd", "abcdx")); // => false
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = isUniqueAnagram;

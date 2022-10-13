@@ -23,8 +23,16 @@ done!
 ***********************************************************************/
 
 function countUp(num) {
-
+  if (num >= 10) {
+    return "done!";
+  }
+  console.log(num);
+  return countUp(num + 1);
 }
+
+console.log(countUp(3)); // prints:
+
+console.log(countUp(20)); // prints
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = countUp;

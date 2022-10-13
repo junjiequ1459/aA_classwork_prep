@@ -15,8 +15,15 @@ multiply(0, 100); // => 0
 ***********************************************************************/
 
 function multiply(a, b) {
+  if (b === 0) {
+    return 0;
+  }
 
+  return a + multiply(a, b - 1);
 }
+console.log(multiply(3, 5)); // => 15
+console.log(multiply(6, 4)); // => 24
+console.log(multiply(0, 100)); // => 0
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = multiply;

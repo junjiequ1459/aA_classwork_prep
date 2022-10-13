@@ -11,8 +11,16 @@ safeSpeedChange([8, 10, 4, 3, 2]); // => false
 ***********************************************************************/
 
 function safeSpeedChange(speeds) {
-
+  for (let i = 0; i < speeds.length - 1; i++) {
+    if (Math.abs(Math.abs(speeds[i]) - Math.abs(speeds[i + 1])) > 5) {
+      return false;
+    }
+  }
+  return true;
 }
+console.log(safeSpeedChange([3, 3, 2, 6, 8, 7])); //=> true
+console.log(safeSpeedChange([3, 3, 2, 6, 12, 10])); // => false
+console.log(safeSpeedChange([8, 10, 4, 3, 2])); // => false
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = safeSpeedChange;

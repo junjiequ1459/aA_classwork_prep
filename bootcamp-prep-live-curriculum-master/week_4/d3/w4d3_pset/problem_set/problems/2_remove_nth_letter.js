@@ -12,8 +12,12 @@ removeNthLetter('computer', 3); // => 'comuter'
 ***********************************************************************/
 
 function removeNthLetter(word, n) {
-
+  return word.slice(0, n) + word.slice(n + 1);
 }
 
+console.log(removeNthLetter("bootcamp", 0)); // => 'ootcamp'
+console.log(removeNthLetter("bootcamp", 6)); // => 'bootcap'
+console.log(removeNthLetter("bootcamp", 4)); // => 'bootamp'
+console.log(removeNthLetter("computer", 3)); // => 'comuter'
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = removeNthLetter;

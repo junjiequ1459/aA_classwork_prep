@@ -16,8 +16,19 @@ uncompressString('x3y1x2z4'); // => 'xxxyxxzzzz'
 ***********************************************************************/
 
 function uncompressString(str) {
-
+  let returnStr = "";
+  for (let i = 0; i < str.length; i += 2) {
+    let num = Number(str[i + 1]);
+    while (num > 0) {
+      returnStr += str[i];
+      num--;
+    }
+  }
+  return returnStr;
 }
+console.log(uncompressString("x3y1x2z4")); // => 'xxxyxxzzzz'
+console.log(uncompressString("a2b4c1")); // => 'aabbbbc'
+console.log(uncompressString("b1o2t1")); // => 'boot'
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = uncompressString;

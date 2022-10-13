@@ -28,8 +28,13 @@ done!
 ***********************************************************************/
 
 function countHalves(n) {
-
+  if (n < 1) {
+    return "done!";
+  }
+  console.log(n);
+  return countHalves(n / 2);
 }
-
+console.log(countHalves(20)); // prints
+console.log(countHalves(100)); // prints
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = countHalves;
