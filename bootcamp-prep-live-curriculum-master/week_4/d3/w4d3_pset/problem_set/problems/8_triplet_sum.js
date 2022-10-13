@@ -13,9 +13,7 @@ tripletSum(arr1, 10); // => [ [ 1, 5, 4 ], [ 3, 5, 2 ] ]
 tripletSum(arr1, 11); // => [ [ 5, 2, 4 ] ]
 ***********************************************************************/
 
-function tripletSum(array, sum) {
-
-}
+function tripletSum(array, sum) {}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = tripletSum;
