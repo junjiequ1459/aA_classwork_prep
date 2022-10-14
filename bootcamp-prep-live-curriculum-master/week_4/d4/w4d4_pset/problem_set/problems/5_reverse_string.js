@@ -11,8 +11,16 @@ reverseString(''); // => ''
 ***********************************************************************/
 
 function reverseString(string) {
-
+  let resultStr = "";
+  for (let i = string.length - 1; i >= 0; i--) {
+    resultStr += string[i];
+  }
+  return resultStr;
 }
+
+console.log(reverseString("bootcamp")); // => 'pmactoob'
+console.log(reverseString("app academy")); // => 'ymedaca ppa'
+console.log(reverseString("")); // => ''
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = reverseString;

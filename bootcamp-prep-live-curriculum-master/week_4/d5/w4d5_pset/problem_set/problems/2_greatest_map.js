@@ -25,10 +25,27 @@ Hint:
 (squareRootRounder(10); //=> 3
 ***********************************************************************/
 
-
 function greatestMap(array, cb1, cb2) {
-
+  return array.map((ele) => {
+    if (cb1(ele) > cb2(ele)) {
+      return cb1(ele);
+    } else {
+      return cb2(ele);
+    }
+  });
 }
+var ary1 = [1, 5, 10];
+
+function squareRootRounder(num) {
+  return Math.round(Math.sqrt(num));
+}
+
+function half(num) {
+  return num / 2;
+}
+
+console.log(greatestMap(ary1, squareRootRounder, half));
+//=> [ 1, 2.5, 5 ]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = greatestMap;

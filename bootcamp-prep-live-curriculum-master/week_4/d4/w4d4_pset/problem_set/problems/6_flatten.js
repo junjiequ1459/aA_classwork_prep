@@ -34,8 +34,32 @@ in your brain. (programmer.mind === 'blown')
 ***********************************************************************/
 
 function flatten(data) {
+  if (!Array.isArray(data)) {
+    return [data];
+  }
 
+  resultList = [];
+  for (let i = 0; i < data.length; i++) {
+    resultList = resultList.concat(flatten(data[i]));
+  }
+  return resultList;
 }
+
+var array1 = [
+  1,
+  2,
+  [
+    [3, 4],
+    [5, [6]],
+  ],
+  [7, 8],
+];
+console.log(flatten(array1)); // => [ 1, 2, 3, 4, 5, 6, 7, 8 ]
+
+var array2 = ["this", ["problem", "is"], [["pretty", "tough"], [[":)"]]]];
+console.log(flatten(array2)); // => [ 'this', 'problem', 'is', 'pretty', 'tough', ':)' ]
+
+console.log(flatten("base case")); // => [ 'base case' ]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = flatten;

@@ -1,1 +1,1 @@
-//print hello world?
+console.log(6 % 3);

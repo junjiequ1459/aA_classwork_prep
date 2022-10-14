@@ -19,8 +19,24 @@ opposingSums(arr2); // => [ 5, 5 ]
 ***********************************************************************/
 
 function opposingSums(array) {
+  let newArr = array.slice(0, array.length / 2);
+  let newArr2 = array.slice(array.length / 2);
+  newArr2.reverse();
+  let resultList = [];
 
+  for (let i = 0; i < newArr.length; i++) {
+    resultList.push(newArr[i] + newArr2[i]);
+  }
+  //console.log(newArr);
+  //console.log(newArr2);
+  return resultList;
 }
+
+var arr1 = [3, 2, 11, 4, 7, 9];
+console.log(opposingSums(arr1)); // => [ 12, 9, 15 ]
+
+var arr2 = [1, 2, 3, 4];
+console.log(opposingSums(arr2)); // => [ 5, 5 ]
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = opposingSums;
