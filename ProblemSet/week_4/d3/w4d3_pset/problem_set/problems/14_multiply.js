@@ -21,6 +21,12 @@ function multiply(a, b) {
 
   return a + multiply(a, b - 1);
 }
+
+// 3 +
+// 3 +
+// 3 +
+// 3 +
+// 3 +
 console.log(multiply(3, 5)); // => 15
 console.log(multiply(6, 4)); // => 24
 console.log(multiply(0, 100)); // => 0

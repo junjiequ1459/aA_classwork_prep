@@ -26,7 +26,6 @@ function isPowerOfTwo(num) {
     if (2 ** n === num) {
       return true;
     }
-
     n++;
   }
 

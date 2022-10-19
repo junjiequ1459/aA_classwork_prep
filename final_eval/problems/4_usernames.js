@@ -24,7 +24,7 @@ function usernames(names) {
       `${splitName[0][0].toLowerCase()}${splitName[1].toLowerCase()}`
     );
   }
-  return resultList;
+  return resultLis  t;
 }
 
 var names = ["Oscar Alvarez", "Danny Catalano", "Kurstie Ozuna", "Matt Haws"];

@@ -28,6 +28,11 @@ function fib(n) {
   }
   return fib(n - 2) + fib(n - 1);
 }
+//fib(6) = fib(4) + fib(5) => 3 + 5
+//fib(5) = fib(3) + fib(4)
+//fib(4) = 1 + fib(3) => 2 => 1+2 => 3
+//fib(3) = 1 + 1
+
 console.log(fib(1)); // => 1
 console.log(fib(2)); // => 1
 console.log(fib(3)); // => 2
